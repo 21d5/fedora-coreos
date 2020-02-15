@@ -1,0 +1,10 @@
+stages:
+  - Build
+
+fedora-core:
+  stage: Build
+  image: hirotakakato/packer
+  cache:
+    untracked: true
+  script:
+    - packer build -on-error=cleanup template.json
